@@ -1,0 +1,9 @@
+.test {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.registerBtn {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,9 +1,63 @@
-.test {
-    text-align: center;
-    margin-top: 10%;
+.login {
+    height: 100%;
+    font-size: 2rem;
 }
 
+.loginForm {
+    display: flex;
+    gap: 4.3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm input { 
+    color: #111;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 10px 0;
+}
+.signup {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.btn {
+    width: 39.9375rem;
+    height: 6.0625rem;
+    flex-shrink: 0;
+    border-radius: 0.3125rem;
+    background-color: #FFC300;
+    color: #111;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+.input {
+    width: 39.9375rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+    background-color: #d9d9d9;
+    border-radius: 0.3rem;
+}
+.logo {
+    color: #FFC300;
+    justify-items: flex-start;
+    font-family: Kodchasan;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    cursor: pointer;
+}
 .registerBtn {
     cursor: pointer;
-    text-decoration: underline;
+    color: #ffc300;
 }

@@ -1,0 +1,61 @@
+.teamLogo img {
+    max-width: 200px;
+    max-height: 200px;
+    cursor: pointer;
+}
+
+.selected {
+    border: solid 2px;
+    border-color: #ffc300; /* change to your highlight color */
+    transform: scale(1.2); /* slightly enlarge the selected badge */
+}
+
+.wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamLogo p {
+    text-align: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap: 2em;
+    width: 100vw;
+}
+.teamList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5em;
+    align-items: center;
+}
+.logo {
+    color: #FFC300;
+    justify-items: flex-start;
+    font-family: Kodchasan;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.btn {
+    width: 31.25rem;
+    height: 9.375rem;
+    flex-shrink: 0;
+    background-color: #ffc300;
+    margin-top: 2em;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

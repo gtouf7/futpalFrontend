@@ -5,8 +5,55 @@
 
 .main {
     color: #fff;
+    width: 100vw;
 }
 
+.main img {
+    width: 11em;
+    height: 8.8em;
+}
 .listItem {
     cursor: pointer;
+}
+.nav li {
+    list-style: none;
+}
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    background-color: #ffc300;
+    color: #000;
+    text-align: center;
+    font-family: Kodchasan;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 70%;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    position: relative;
+}
+
+.logOut {
+    position: absolute;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    top: 16%;
+    width: 34em;
+    height: 2em;
+    text-align: center;
+    left: 70%;
+    background-color: #ffc300;
+}
+
+.logOut p {
+    text-decoration: none;
+    font-family: kodchasan;
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }

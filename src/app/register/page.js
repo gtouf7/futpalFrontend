@@ -1,6 +1,5 @@
 // REGISTRATION PAGE
 'use client';
-
 import styles from './register.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -23,7 +22,7 @@ export default function Register() {
             alert("Passwords don't match!"); // Debugging message
             return;
         }
-        console.log(username, password); // debugging
+        //console.log(username, password); // debugging
         //response field for fetching the data
         const response = await fetch('/api/register', {
             method: 'POST',
@@ -50,28 +49,34 @@ export default function Register() {
     return(
         <div>
             <h1 className={styles.logo} onClick={toHome}>FUTPAL</h1>
-            <form className={styles.registrationForm} onSubmit={handleRegistration}>
-                <label>Username</label>
-                <input className={styles.input} type="text" value={username} placeholder="Your username" onChange={(e) => setUsername(e.target.value)} required /><br />
+            <form  onSubmit={handleRegistration}>
+                <div className={styles.registrationForm}>
+                    <div className={styles.flexbox}>
+                        <label>Username</label><br/>
+                        <input className={styles.input} type="text" value={username} placeholder="Your username" onChange={(e) => setUsername(e.target.value)} required /><br />
 
-                <label>Email</label>
-                <input className={styles.input} type="email" value={email} placeholder="user@example.com" onChange={(e) => setEmail(e.target.value)} required /><br />
-                
-                <label>Password</label>
-                <input className={styles.input} type="password" value={password} placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} required /><br />
+                        <label>Email</label><br/>
+                        <input className={styles.input} type="email" value={email} placeholder="user@example.com" onChange={(e) => setEmail(e.target.value)} required /><br />
+                    </div>
+                    <div className={styles.flexbox}>
+                        <label>Password</label><br/>
+                        <input className={styles.input} type="password" value={password} placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} required /><br />
 
-                <label>Confirm Password</label>
-                <input className={styles.input} type="password" value={confirmPassword} placeholder="Re-enter your password" onChange={(e) => setConfirmPassword(e.target.value)} required /><br />
-
-                <label>Country</label>
-                <select className={styles.input} value={country} onChange={(e) => setCountry(e.target.value)}>
-                    <option value='X' disabled>-- Choose a Country --</option>
-                    <option value='USA'>United States of America</option>
-                    <option value='Canada'>Canada</option>
-                    <option value='Greece'>Greece</option>
-                    <option value='Germany'>Germany</option>
-                </select><br />
-                <button id={styles.btn} type="submit">Create Account</button>
+                        <label>Confirm Password</label><br/>
+                        <input className={styles.input} type="password" value={confirmPassword} placeholder="Re-enter your password" onChange={(e) => setConfirmPassword(e.target.value)} required /><br />
+                    </div>
+                </div>
+                <div className={styles.botFlex}>
+                    <label>Country</label>
+                    <select id="country" className={styles.input} value={country} onChange={(e) => setCountry(e.target.value)}>
+                        <option value='X' disabled>-- Choose a Country --</option>
+                        <option value='USA'>United States of America</option>
+                        <option value='Canada'>Canada</option>
+                        <option value='Greece'>Greece</option>
+                        <option value='Germany'>Germany</option>
+                    </select><br />
+                    <button className={styles.btn} type="submit">Create Account</button>
+                </div>
             </form>
         </div>
     );

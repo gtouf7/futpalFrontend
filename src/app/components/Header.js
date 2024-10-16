@@ -47,8 +47,8 @@ export default function Header() {
     
     return(
         <div className={styles.main}>
-            <img src="/futpal-logo.png" alt="FutPal logo" />
-            <nav>
+            <img src="/futpal-logo-text.png" alt="FutPal logo" />
+            <nav className={styles.nav}>
                 <ul>
                     <li className={styles.listItem} onClick={goToHome}>Home</li>
                     <li className={styles.listItem} onClick={goToRoster}>Roster</li>
@@ -57,7 +57,9 @@ export default function Header() {
                     <li className={styles.listItem} onClick={goToTransfers}>Transfers</li>
                 </ul>
             </nav>
-            <p className={styles.logOutBtn} onClick={logOut}>Log Out</p>
+            <div className={styles.logOut}>
+                <p className={styles.logOutBtn} onClick={logOut}>Log Out</p>
+            </div>
         </div>
     );
 }

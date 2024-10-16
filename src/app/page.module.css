@@ -6,48 +6,16 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  /*display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;*/
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -85,23 +53,23 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-} 
-
 /* FONTS */
 .startingTxT {
   margin-top: 3%;
   color: #fff;
   text-align: center;
-  font-size: 6rem;
+  font-size: 5rem;
+}
+
+.startingWrd {
+  font-family: kodchasan;
+  color: #ffc300;
 }
 .special {
   font-family: kodchasan;
   text-align: center;
   color: #ffc300;
+  font-size: 2.25rem;
 }
 
 .info {
@@ -110,6 +78,38 @@
   max-width: 70%;
 }
 
+.txtBoxMain {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+
+.infoSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+
+.infoSection p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 37rem;
+}
 /* Button */
 .actionBtn {
   width: 22.5rem;
@@ -121,5 +121,15 @@
   font-weight: 600;
   border-radius: 5px;
   border: none;
-  margin: 7%;
+  margin: 4%;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  padding: 0 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

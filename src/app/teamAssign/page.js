@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
+import styles from "./teamAssign.module.css";
 
 export default function teamAssign() {
     const router = useRouter();
@@ -57,7 +58,6 @@ export default function teamAssign() {
             });
             //console.log('teamId:', teamId);
             const data = await response.json();
-            //console.log('data:', data);
             if (response.ok) {
                 //console.log('response2:', response);
                 setMessage('Team successfully assigned');
@@ -75,19 +75,33 @@ export default function teamAssign() {
 
     return(
         <div>
-            <h2>Choose your team</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="team">Select team:</label>
-                <select id="team" value={teamId} onChange={(e) => setTeamId(e.target.value)}>
+            <h2 className={styles.logo}>FUTPAL</h2>
+            <div className={styles.wrapper}>
+                <h3>Welcome to FutPal! Select your team to continue.</h3>
+                <form onSubmit={handleSubmit}>
+                {/*<select id="team" value={teamId} onChange={(e) => setTeamId(e.target.value)}>
                     var selected 
                     <option value="" disabled>-- Select a Team --</option>
                     {teams.map((team) => (
                         <option key={team._id} value={team._id}>{team.name}</option>
                     ))}
-                </select>
-                <button type="submit">Pick Team</button>
-            </form>
-            { message &&  <p>{message}</p>}
+                </select>*/}
+
+                    <div className={styles.teamList}>
+                    {teams.map((team) => (
+                        <div 
+                            key={team._id} 
+                            className={`${styles.teamLogo} ${teamId === team._id ? styles.selected : ''}`}
+                            onClick={() => setTeamId(team._id)}>
+                            <img src={team.logo.img} alt={`${team.logo.alt} Badge`} />
+                            <p>{team.name}</p>
+                        </div>
+                    ))}
+                    </div>
+                    <button className={styles.btn} type="submit">Pick Team</button>
+                </form>
+                { message &&  <p>{message}</p>}
+            </div>
         </div>
     );
 }

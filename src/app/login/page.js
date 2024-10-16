@@ -28,10 +28,11 @@ export default function Login() {
             //console.log(data);
             const selTeam = data.user.team;
             localStorage.setItem('token', data.JWToken);
+            const token = localStorage.getItem('token');
             if(!selTeam) {
                 //localStorage.setItem('token', data.JWToken);
                 router.push('/teamAssign');
-            } else {
+            } else if (token) {
             //localStorage.setItem('token', data.JWToken);
             router.push('/dashboard');
             }
@@ -45,15 +46,24 @@ export default function Login() {
         router.push('/register');
     }
 
+    function goHome() {
+        router.push("/");
+    }
+
     return(
-        <div className={styles.test}>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input type="email" placeholder="email@example.com" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-                <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-                <button type="submit">Login</button>
-            </form>
-            <p className={styles.registerBtn} onClick={redirectSignUp}>Create an Account</p>
+        <div className={styles.login}>
+            <h2 className={styles.logo} onClick={goHome}>FUTPAL</h2>
+            <div className={styles.loginForm}>
+                <p>Log in to prepare for your next match!</p>
+                <form onSubmit={handleLogin}>
+                    <label>Email</label><br/>
+                    <input className={styles.input} type="email" placeholder="email@example.com" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+                    <label>Password</label><br/>
+                    <input className={styles.input} id="pwd" type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+                    <button className={styles.btn} type="submit">Login</button>
+                </form>
+            </div>
+            <p className={styles.signup}>Don't have an account? <span className={styles.registerBtn} onClick={redirectSignUp}>Sign Up</span></p>
         </div>
     );
 }

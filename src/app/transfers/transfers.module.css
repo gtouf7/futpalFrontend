@@ -1,0 +1,58 @@
+.currency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.currency img {
+    width: 24px;
+    height: 24px;
+}
+
+.playersList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.playerCard {
+    border: 1px solid #ffc300;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    background-color: #222;
+}
+
+.playerCard h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ffc300;
+}
+
+.playerCard p {
+    margin: 0.5rem 0;
+    color: #fff;
+}
+.buyButton {
+    background-color: #ffc300;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.buyButton:hover {
+    background-color: #e6b800;
+}
+.main h2 {
+    text-align: center;
+    margin: 1.5em auto;
+}

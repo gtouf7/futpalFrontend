@@ -1,3 +1,38 @@
 .fixturesPage {
     color: #fff;
+    text-align: center;
+}
+.fixturesPage h2{
+    margin: 1.5em auto;
+}
+
+
+.matchday {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ffc300;
+    border-radius: 8px;
+    background-color: #222;
+    margin: 1em 2em;
+}
+
+.matchday h3 {
+    color: #ffc300;
+    margin-bottom: 1rem;
+}
+
+.matchday p {
+    padding: 0.5rem 0;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #ffc300;
+}
+
+.matchday p:last-child {
+    border-bottom: none;
+}
+
+.matchday p span {
+    margin: 0 0.5rem;
 }

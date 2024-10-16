@@ -51,3 +51,6 @@
     line-height: normal;
     text-align: center;
 }
+.btn:hover {
+    background-color:#BE9100;
+}

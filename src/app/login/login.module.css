@@ -39,6 +39,9 @@
     line-height: normal;
     cursor: pointer;
 }
+.btn:hover {
+    background-color:#BE9100;
+}
 .input {
     width: 39.9375rem;
     height: 4.5rem;

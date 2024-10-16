@@ -32,7 +32,7 @@ export default function Standings() {
         <div className={styles.standingsPage}>
             <Header />
             <h2>English Premier League Standings</h2>
-            <div>
+            <div className={styles.table}>
                 <table>
                     <thead>
                         <tr>
@@ -52,7 +52,7 @@ export default function Standings() {
                         {teams.map((team, index) => (
                             <tr key={team.teamId._id}>
                                 <td>{index+1}</td>
-                                <td>{team.teamId.name}</td>
+                                <td><img src={team.teamId.logo.img} alt={team.teamId.logo.alt}></img> <span>{team.teamId.name}</span></td>
                                 <td>{team.stats.gp}</td>
                                 <td>{team.stats.pts}</td>
                                 <td>{team.stats.w}</td>

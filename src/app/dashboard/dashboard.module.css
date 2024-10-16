@@ -85,3 +85,7 @@
     line-height: normal;
     cursor: pointer;
 }
+
+.btn:hover {
+    background-color:#BE9100;
+}

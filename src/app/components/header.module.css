@@ -57,3 +57,20 @@
     font-weight: 600;
     line-height: normal;
 }
+
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        font-size: 1rem;
+        gap: 1em;
+    }
+
+    .logOut {
+        top: 20%;
+        width: 80%;
+    }
+
+    .main img {
+        width: 6em;
+    }
+}

@@ -1,3 +1,4 @@
+
 'use client';
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
@@ -40,7 +41,6 @@ export default function Dashboard() {
                 );
 
                 setGamePlayed(true);
-                setOwnTeamMatch(true);
             }
         }
     }, [user]);
@@ -102,14 +102,47 @@ export default function Dashboard() {
             }
         }
     };
-    console.log(user);
+    
+    const [upcomingMatch, setUpcomingMatch] = useState(null);
+
+    useEffect(() => {
+        if(currentFixture && user) {
+        const nextGame = currentFixture.matches.find(
+            match => match.result.home === null
+        );
+        setUpcomingMatch(nextGame);
+
+        if (nextGame && (nextGame.homeTeam.name === user.team.name || nextGame.awayTeam.name === user.team.name)) {
+            setOwnTeamMatch(true);
+        } else {
+            setOwnTeamMatch(false);
+        }
+    }
+    }, [currentFixture, user]);
+console.log(upcomingMatch)
     return user ? (
         <div className={styles.main}>
             <Header />
             <h2>Welcome, {user && user.username}!</h2>
-            <div className={styles.match}>
-                <h3>Next game</h3>
-                <button onClick={handlePlayGame}>{ownTeamMatch ? 'Play Game' : 'Continue'}</button>
+            <div className={styles.container}>
+            {upcomingMatch ? (
+                <div className={styles.wrapper}>
+                    <h3>Next game</h3>
+                    <div className={styles.nextFixture}>
+                        <img src={upcomingMatch.homeTeam.logo.img} alt={upcomingMatch.homeTeam.logo.alt}></img>
+                        <span>VS</span>
+                        <img src={upcomingMatch.awayTeam.logo.img} alt={upcomingMatch.awayTeam.logo.alt}></img>
+                    </div>
+                    <button className={styles.btn} onClick={handlePlayGame}>{ownTeamMatch ? 'Play Game' : 'Continue'}</button>
+                </div>
+            ) : ( <p> Loading match...</p>)}
+            {upcomingMatch ? (
+                <div className={styles.infoWrapper}>
+                    <h3>Match Details</h3>
+                    <p><span>Stadium:</span> {upcomingMatch.homeTeam.stadium}</p>
+                    <p><span>City:</span> {upcomingMatch.homeTeam.city},{upcomingMatch.homeTeam.country}</p>
+                </div>
+            ) : ( <p> Loading data...</p>)}
             </div>
         </div>
     ) : (
